@@ -268,6 +268,15 @@
             font-size: 20px;
             margin-bottom: 10px;
         }
+        
+        #win-message {
+            display: none;
+            font-size: 22px;
+            color: gold;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
 
         .game-status {
             display: flex;
@@ -456,6 +465,7 @@
 
     <section id="game-section">
         <h3>Seu Jogo de Moedas</h3>
+        <p id="win-message">Parabéns! Você alcançou o googol de moedas e dominou o jogo!</p>
         <div class="game-status">
             <p>Moedas: <span class="coin-status" id="coin-count">0</span></p>
             <p>Robux: <span class="robux-status" id="robux-count">0</span></p>
@@ -476,13 +486,38 @@
                 <button class="upgrade-button" id="buy-passive-upgrade">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="robux-click-upgrade-text">Moedas por clique (+1.000) (Custo: 20 Robux)</span>
-                <button class="upgrade-button" id="buy-robux-click-upgrade">Comprar</button>
+                <span id="passive-upgrade-10-text">Moedas por segundo (+10) (Custo: 5 Robux)</span>
+                <button class="upgrade-button" id="buy-passive-upgrade-10">Comprar</button>
             </div>
             <div class="upgrade-item">
                 <span id="super-passive-upgrade-text">Moedas por segundo (+1.000) (Custo: 10 Robux)</span>
                 <button class="upgrade-button" id="buy-super-passive-upgrade">Comprar</button>
             </div>
+            <div class="upgrade-item">
+                <span id="robux-click-upgrade-text">Moedas por clique (+1.000) (Custo: 20 Robux)</span>
+                <button class="upgrade-button" id="buy-robux-click-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="passive-upgrade-100k-text">Moedas por segundo (+100.000) (Custo: 50 Robux)</span>
+                <button class="upgrade-button" id="buy-passive-upgrade-100k">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-robux-upgrade-text">Robux por segundo (+1 Quadrilhão) (Custo: 10.000 Robux)</span>
+                <button class="upgrade-button" id="buy-super-robux-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="click-upgrade-million-text">Moedas por clique (+1 Milhão) (Custo: 100.000 Robux)</span>
+                <button class="upgrade-button" id="buy-click-upgrade-million">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-coin-upgrade-text">Moedas por segundo (+1 Sextilhão) (Custo: 1.000.000 Robux)</span>
+                <button class="upgrade-button" id="buy-super-coin-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="septillion-coin-upgrade-text">Moedas por segundo (+100 Octilhões) (Custo: 10 Quintilhões Robux)</span>
+                <button class="upgrade-button" id="buy-septillion-coin-upgrade">Comprar</button>
+            </div>
+
             <div class="upgrade-item">
                 <span id="super-passive-2-upgrade-text">Moedas por segundo (+100.000) (Custo: 100.000 Moedas)</span>
                 <button class="upgrade-button" id="buy-super-passive-2-upgrade">Comprar</button>
@@ -491,49 +526,65 @@
                 <span id="super-click-2-upgrade-text">Moedas por clique (+100.000) (Custo: 100.000 Moedas)</span>
                 <button class="upgrade-button" id="buy-super-click-2-upgrade">Comprar</button>
             </div>
-             <div class="upgrade-item">
-                <span id="super-passive-3-upgrade-text">Moedas por segundo (+50.000.000) (Custo: 300.000.000 Moedas)</span>
-                <button class="upgrade-button" id="buy-super-passive-3-upgrade">Comprar</button>
-            </div>
             <div class="upgrade-item">
                 <span id="super-click-3-upgrade-text">Moedas por clique (+50.000.000) (Custo: 100.000.000 Moedas)</span>
                 <button class="upgrade-button" id="buy-super-click-3-upgrade">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="passive-robux-upgrade-text">Robux por segundo (+1) (Custo: 1.000.000.000.000 Moedas)</span>
+                <span id="super-passive-3-upgrade-text">Moedas por segundo (+50.000.000) (Custo: 300.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-3-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="click-robux-upgrade-text">Robux por clique (+2) (Custo: 100 Bilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-click-robux-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="passive-robux-upgrade-text">Robux por segundo (+1) (Custo: 1 Trilhao Moedas)</span>
                 <button class="upgrade-button" id="buy-passive-robux-upgrade">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="super-robux-upgrade-text">Robux por segundo (+1 Quadrilhão) (Custo: 10.000 Robux)</span>
-                <button class="upgrade-button" id="buy-super-robux-upgrade">Comprar</button>
+                <span id="trillion-coin-upgrade-text">Moedas por segundo (+1 Trilhao) (Custo: 5 Trilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-trillion-coin-upgrade">Comprar</button>
+            </div>
+             <div class="upgrade-item">
+                <span id="passive-upgrade-billion-text">Moedas por segundo (+1 Bilhão) (Custo: 100 Trilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-passive-upgrade-billion">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="super-passive-robux-upgrade-2-text">Robux por segundo (+1.000) (Custo: 100.000.000.000.000.000 Moedas)</span>
+                <span id="super-passive-robux-upgrade-2-text">Robux por segundo (+1.000) (Custo: 100 Quadrilhões Moedas)</span>
                 <button class="upgrade-button" id="buy-super-passive-robux-upgrade-2">Comprar</button>
-            </div>
-            <div class="upgrade-item">
-                <span id="super-coin-upgrade-text">Moedas por segundo (+1 Sextilhão) (Custo: 1.000.000 Robux)</span>
-                <button class="upgrade-button" id="buy-super-coin-upgrade">Comprar</button>
-            </div>
-            <div class="upgrade-item">
-                <span id="super-passive-robux-upgrade-3-text">Robux por segundo (+1 Trilhao) (Custo: 10.000.000.000.000.000.000.000.000.000.000 Moedas)</span>
-                <button class="upgrade-button" id="buy-super-passive-robux-upgrade-3">Comprar</button>
-            </div>
-            <div class="upgrade-item">
-                <span id="septillion-coin-upgrade-text">Moedas por segundo (+100 Octilhões) (Custo: 10 Quintilhões Robux)</span>
-                <button class="upgrade-button" id="buy-septillion-coin-upgrade">Comprar</button>
             </div>
             <div class="upgrade-item">
                 <span id="quadrillion-robux-upgrade-text">Robux por segundo (+100 Quadrilhões) (Custo: 100 Quintilhões Moedas)</span>
                 <button class="upgrade-button" id="buy-quadrillion-robux-upgrade">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="trillion-coin-upgrade-text">Moedas por segundo (+1 Trilhao) (Custo: 5 Trilhões Moedas)</span>
-                <button class="upgrade-button" id="buy-trillion-coin-upgrade">Comprar</button>
+                <span id="super-passive-robux-upgrade-3-text">Robux por segundo (+1 Trilhao) (Custo: 10 Decilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-robux-upgrade-3">Comprar</button>
             </div>
             <div class="upgrade-item">
-                <span id="click-robux-upgrade-text">Robux por clique (+2) (Custo: 100 Bilhões Moedas)</span>
-                <button class="upgrade-button" id="buy-click-robux-upgrade">Comprar</button>
+                <span id="undecillion-coin-upgrade-text">Moedas por clique (+100 Undecilhões) (Custo: 10 Duodecilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-undecillion-coin-upgrade">Comprar</button>
+            </div>
+             <div class="upgrade-item">
+                <span id="duodecillion-robux-upgrade-text">Robux por segundo (+100 Duodecilhões) (Custo: 10 Undecilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-duodecillion-robux-upgrade">Comprar</button>
+            </div>
+             <div class="upgrade-item">
+                <span id="tredecillion-coin-upgrade-text">Moedas por segundo (+1 Tredecilhão) (Custo: 5 Quattuordecilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-tredecillion-coin-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="vigintillion-robux-upgrade-text">Robux por segundo (+10 Quintilhões) (Custo: 10 Septilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-vigintillion-robux-upgrade">Comprar</button>
+            </div>
+             <div class="upgrade-item">
+                <span id="massive-coin-upgrade-text">Moedas por segundo (+100 Tredecilhões) (Custo: 100 Tredecilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-massive-coin-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="final-coin-upgrade-text">Moedas por segundo (+1 Vigintilhão) (Custo: 100 Vigintilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-final-coin-upgrade">Comprar</button>
             </div>
         </div>
 
@@ -557,153 +608,204 @@
         const robuxButton = document.getElementById('robux-button');
         const coinCountDisplay = document.getElementById('coin-count');
         const robuxCountDisplay = document.getElementById('robux-count');
+        const winMessage = document.getElementById('win-message');
         const btnRobuxFake = document.getElementById('btn-robux-fake');
         
         const buyClickUpgradeBtn = document.getElementById('buy-click-upgrade');
         const buyPassiveUpgradeBtn = document.getElementById('buy-passive-upgrade');
-        const buyRobuxClickUpgradeBtn = document.getElementById('buy-robux-click-upgrade');
+        const buyPassiveUpgrade10Btn = document.getElementById('buy-passive-upgrade-10');
         const buySuperPassiveUpgradeBtn = document.getElementById('buy-super-passive-upgrade');
+        const buyRobuxClickUpgradeBtn = document.getElementById('buy-robux-click-upgrade');
+        const buyPassiveUpgrade100kBtn = document.getElementById('buy-passive-upgrade-100k');
+        const buySuperRobuxUpgradeBtn = document.getElementById('buy-super-robux-upgrade');
+        const buyClickUpgradeMillionBtn = document.getElementById('buy-click-upgrade-million');
+        const buySuperCoinUpgradeBtn = document.getElementById('buy-super-coin-upgrade');
+        const buySeptillionCoinUpgradeBtn = document.getElementById('buy-septillion-coin-upgrade');
         const buySuperPassive2UpgradeBtn = document.getElementById('buy-super-passive-2-upgrade');
         const buySuperClick2UpgradeBtn = document.getElementById('buy-super-click-2-upgrade');
-        const buySuperPassive3UpgradeBtn = document.getElementById('buy-super-passive-3-upgrade');
         const buySuperClick3UpgradeBtn = document.getElementById('buy-super-click-3-upgrade');
-        const buyPassiveRobuxUpgradeBtn = document.getElementById('buy-passive-robux-upgrade');
-        const buySuperRobuxUpgradeBtn = document.getElementById('buy-super-robux-upgrade');
-        const buySuperPassiveRobuxUpgrade2Btn = document.getElementById('buy-super-passive-robux-upgrade-2');
-        const buySuperCoinUpgradeBtn = document.getElementById('buy-super-coin-upgrade');
-        const buySuperPassiveRobuxUpgrade3Btn = document.getElementById('buy-super-passive-robux-upgrade-3');
-        const buySeptillionCoinUpgradeBtn = document.getElementById('buy-septillion-coin-upgrade');
-        const buyQuadrillionRobuxUpgradeBtn = document.getElementById('buy-quadrillion-robux-upgrade');
-        const buyTrillionCoinUpgradeBtn = document.getElementById('buy-trillion-coin-upgrade');
+        const buySuperPassive3UpgradeBtn = document.getElementById('buy-super-passive-3-upgrade');
         const buyClickRobuxUpgradeBtn = document.getElementById('buy-click-robux-upgrade');
+        const buyPassiveRobuxUpgradeBtn = document.getElementById('buy-passive-robux-upgrade');
+        const buyTrillionCoinUpgradeBtn = document.getElementById('buy-trillion-coin-upgrade');
+        const buyPassiveUpgradeBillionBtn = document.getElementById('buy-passive-upgrade-billion');
+        const buySuperPassiveRobuxUpgrade2Btn = document.getElementById('buy-super-passive-robux-upgrade-2');
+        const buyQuadrillionRobuxUpgradeBtn = document.getElementById('buy-quadrillion-robux-upgrade');
+        const buySuperPassiveRobuxUpgrade3Btn = document.getElementById('buy-super-passive-robux-upgrade-3');
+        const buyUndecillionCoinUpgradeBtn = document.getElementById('buy-undecillion-coin-upgrade');
+        const buyDuodecillionRobuxUpgradeBtn = document.getElementById('buy-duodecillion-robux-upgrade');
+        const buyTredecillionCoinUpgradeBtn = document.getElementById('buy-tredecillion-coin-upgrade');
+        const buyVigintillionRobuxUpgradeBtn = document.getElementById('buy-vigintillion-robux-upgrade');
+        const buyMassiveCoinUpgradeBtn = document.getElementById('buy-massive-coin-upgrade');
+        const buyFinalCoinUpgradeBtn = document.getElementById('buy-final-coin-upgrade');
         
         const clickUpgradeText = document.getElementById('click-upgrade-text');
         const passiveUpgradeText = document.getElementById('passive-upgrade-text');
-        const robuxClickUpgradeText = document.getElementById('robux-click-upgrade-text');
+        const passiveUpgrade10Text = document.getElementById('passive-upgrade-10-text');
         const superPassiveUpgradeText = document.getElementById('super-passive-upgrade-text');
+        const robuxClickUpgradeText = document.getElementById('robux-click-upgrade-text');
+        const passiveUpgrade100kText = document.getElementById('passive-upgrade-100k-text');
+        const superRobuxUpgradeText = document.getElementById('super-robux-upgrade-text');
+        const clickUpgradeMillionText = document.getElementById('click-upgrade-million-text');
+        const superCoinUpgradeText = document.getElementById('super-coin-upgrade-text');
+        const septillionCoinUpgradeText = document.getElementById('septillion-coin-upgrade-text');
         const superPassive2UpgradeText = document.getElementById('super-passive-2-upgrade-text');
         const superClick2UpgradeText = document.getElementById('super-click-2-upgrade-text');
-        const superPassive3UpgradeText = document.getElementById('super-passive-3-upgrade-text');
         const superClick3UpgradeText = document.getElementById('super-click-3-upgrade-text');
-        const passiveRobuxUpgradeText = document.getElementById('passive-robux-upgrade-text');
-        const superRobuxUpgradeText = document.getElementById('super-robux-upgrade-text');
-        const superPassiveRobuxUpgrade2Text = document.getElementById('super-passive-robux-upgrade-2-text');
-        const superCoinUpgradeText = document.getElementById('super-coin-upgrade-text');
-        const superPassiveRobuxUpgrade3Text = document.getElementById('super-passive-robux-upgrade-3-text');
-        const septillionCoinUpgradeText = document.getElementById('septillion-coin-upgrade-text');
-        const quadrillionRobuxUpgradeText = document.getElementById('quadrillion-robux-upgrade-text');
-        const trillionCoinUpgradeText = document.getElementById('trillion-coin-upgrade-text');
+        const superPassive3UpgradeText = document.getElementById('super-passive-3-upgrade-text');
         const clickRobuxUpgradeText = document.getElementById('click-robux-upgrade-text');
+        const passiveRobuxUpgradeText = document.getElementById('passive-robux-upgrade-text');
+        const trillionCoinUpgradeText = document.getElementById('trillion-coin-upgrade-text');
+        const passiveUpgradeBillionText = document.getElementById('passive-upgrade-billion-text');
+        const superPassiveRobuxUpgrade2Text = document.getElementById('super-passive-robux-upgrade-2-text');
+        const quadrillionRobuxUpgradeText = document.getElementById('quadrillion-robux-upgrade-text');
+        const superPassiveRobuxUpgrade3Text = document.getElementById('super-passive-robux-upgrade-3-text');
+        const undecillionCoinUpgradeText = document.getElementById('undecillion-coin-upgrade-text');
+        const duodecillionRobuxUpgradeText = document.getElementById('duodecillion-robux-upgrade-text');
+        const tredecillionCoinUpgradeText = document.getElementById('tredecillion-coin-upgrade-text');
+        const vigintillionRobuxUpgradeText = document.getElementById('vigintillion-robux-upgrade-text');
+        const massiveCoinUpgradeText = document.getElementById('massive-coin-upgrade-text');
+        const finalCoinUpgradeText = document.getElementById('final-coin-upgrade-text');
 
-        let coinCount = 0;
-        let robuxCount = 0;
-        let coinsPerClick = 1;
-        let passiveCoinGain = 0;
-        let robuxPerClick = 1; // Novo contador de robux por clique
-        let passiveRobuxGain = 0;
+        // Usando BigInt para lidar com números grandes sem perda de precisão
+        let coinCount = 0n;
+        let robuxCount = 0n;
+        let coinsPerClick = 1n;
+        let passiveCoinGain = 0n;
+        let robuxPerClick = 1n; 
+        let passiveRobuxGain = 0n;
         
-        let clickUpgradeCost = 2;
-        let passiveUpgradeCost = 2;
-        let superPassiveUpgradeCost = 10;
-        
-        // Novos upgrades
-        const robuxClickUpgradeCost = 20;
-        const superPassive2UpgradeCost = 100000;
-        const superClick2UpgradeCost = 100000;
-        const superPassive3UpgradeCost = 300000000;
-        const superClick3UpgradeCost = 100000000;
-        const passiveRobuxUpgradeCost = 1e12; // 1 trilhão
-        const superRobuxUpgradeCost = 10000;
-        const superPassiveRobuxUpgrade2Cost = 1e17; // 100 quadrilhões
-        const superCoinUpgradeCost = 1e6; // 1 milhão
-        const superCoinGain = 1e21; // 1 sextilhão
-        const superPassiveRobuxUpgrade3Cost = 1e31; // 10 decilhões
-        const superRobuxGain = 1e12; // 1 trilhão
-        const septillionCoinUpgradeCost = 1e19; // 10 quintilhões
-        const septillionCoinGain = 1e26; // 100 octilhões
-        const quadrillionRobuxUpgradeCost = 1e20; // 100 quintilhões
-        const quadrillionRobuxGain = 1e17; // 100 quadrilhões
-        const trillionCoinUpgradeCost = 5e12; // 5 trilhões
-        const trillionCoinGain = 1e12; // 1 trilhão
-        const clickRobuxUpgradeCost = 1e11; // 100 bilhões
+        const winCondition = 10n ** 100n; // 1 googol
 
+        // Robux Upgrades
+        let clickUpgradeCost = 2n;
+        let passiveUpgradeCost = 2n;
+        const passiveUpgrade10Cost = 5n;
+        const superPassiveUpgradeCost = 10n;
+        const robuxClickUpgradeCost = 20n;
+        const passiveUpgrade100kCost = 50n;
+        const superRobuxUpgradeCost = 10_000n;
+        const clickUpgradeMillionCost = 100_000n;
+        const superCoinUpgradeCost = 1_000_000n;
+        const septillionCoinUpgradeCost = 10n ** 19n;
+        
+        // Moeda Upgrades
+        const superPassive2UpgradeCost = 100_000n;
+        const superClick2UpgradeCost = 100_000n;
+        const superClick3UpgradeCost = 100_000_000n;
+        const superPassive3UpgradeCost = 300_000_000n;
+        const clickRobuxUpgradeCost = 100_000_000_000n; // 100 Bilhões
+        const passiveRobuxUpgradeCost = 1_000_000_000_000n; // 1 Trilhao
+        const trillionCoinUpgradeCost = 5_000_000_000_000n; // 5 Trilhões
+        const passiveUpgradeBillionCost = 100_000_000_000_000n; // 100 trilhões
+        const superPassiveRobuxUpgrade2Cost = 100n ** 15n; // 100 Quadrilhões
+        const quadrillionRobuxUpgradeCost = 100n ** 18n; // 100 Quintilhões
+        const superPassiveRobuxUpgrade3Cost = 10n ** 31n; // 10 Decilhões
+        const undecillionCoinUpgradeCost = 10n ** 37n; // 10 Duodecilhões
+        const duodecillionRobuxUpgradeCost = 10n ** 33n; // 10 Undecilhões
+        const tredecillionCoinUpgradeCost = 5n * (10n ** 45n); // 5 Quattuordecilhões
+        const vigintillionRobuxUpgradeCost = 10n * (10n ** 54n); // 10 Septilhões
+        const massiveCoinUpgradeCost = 100n * (10n ** 39n); // 100 Tredecilhões
+        const finalCoinUpgradeCost = 100n * (10n ** 63n); // 100 Vigintilhões
+        
         const numberNames = [
             '', 'mil', 'milhões', 'bilhões', 'trilhões', 'quadrilhões',
-            'quintilhões', 'sextilhões', 'septilhões', 'octilhões', 'nonilhões', 'decilhões'
+            'quintilhões', 'sextilhões', 'septilhões', 'octilhões', 'nonilhões', 'decilhões', 
+            'undecilhões', 'duodecilhões', 'tredecilhões', 'quattuordecilhões', 
+            'quindecilhões', 'sexdecilhões', 'septendecilhões', 'octodecilhões', 
+            'novemdecilhões', 'vigintilhões'
         ];
 
-        function formatLargeNumber(num) {
-            if (num === 0) return '0';
+        function formatBigInt(num) {
+            if (num === 0n) return '0';
             let sign = '';
-            if (num < 0) {
+            if (num < 0n) {
                 sign = '-';
                 num = -num;
             }
+            let numStr = num.toString();
+            let len = numStr.length;
+            if (len <= 3) return num.toLocaleString('pt-BR');
 
-            const numAbs = Math.abs(num);
-            const index = Math.floor(Math.log10(numAbs) / 3);
-            if (index < numberNames.length) {
-                const formattedNum = (numAbs / Math.pow(10, index * 3)).toFixed(1);
-                return `${sign}${parseFloat(formattedNum).toLocaleString('pt-BR')} ${numberNames[index]}`;
-            } else {
-                return sign + num.toExponential(2).replace('e+', ' E+');
+            let nameIndex = Math.floor((len - 1) / 3);
+            if (nameIndex >= numberNames.length) {
+                // Para números maiores que vigintilhões, volta para notação científica
+                return sign + num.toExponential(2).replace('n', '').replace('e+', 'e');
             }
+
+            let remainder = (len - 1) % 3 + 1;
+            let formattedNum = numStr.substring(0, remainder) + (len > 3 ? '.' + numStr.substring(remainder, remainder + 3) : '');
+            
+            return `${sign}${formattedNum} ${numberNames[nameIndex]}`;
         }
         
         function updateCounts() {
-            coinCountDisplay.textContent = formatLargeNumber(coinCount);
-            robuxCountDisplay.textContent = formatLargeNumber(robuxCount);
+            coinCountDisplay.textContent = formatBigInt(coinCount);
+            robuxCountDisplay.textContent = formatBigInt(robuxCount);
             
             // Atualiza os textos dos upgrades
-            clickUpgradeText.textContent = `Moeda por clique (+1) (Custo: ${formatLargeNumber(clickUpgradeCost)} Robux)`;
-            passiveUpgradeText.textContent = `Moeda por segundo (+1) (Custo: ${formatLargeNumber(passiveUpgradeCost)} Robux)`;
-            robuxClickUpgradeText.textContent = `Moedas por clique (+1.000) (Custo: ${formatLargeNumber(robuxClickUpgradeCost)} Robux)`;
-            superPassiveUpgradeText.textContent = `Moedas por segundo (+1.000) (Custo: ${formatLargeNumber(superPassiveUpgradeCost)} Robux)`;
-            superPassive2UpgradeText.textContent = `Moedas por segundo (+100.000) (Custo: ${formatLargeNumber(superPassive2UpgradeCost)} Moedas)`;
-            superClick2UpgradeText.textContent = `Moedas por clique (+100.000) (Custo: ${formatLargeNumber(superClick2UpgradeCost)} Moedas)`;
-            superPassive3UpgradeText.textContent = `Moedas por segundo (+50.000.000) (Custo: ${formatLargeNumber(superPassive3UpgradeCost)} Moedas)`;
-            superClick3UpgradeText.textContent = `Moedas por clique (+50.000.000) (Custo: ${formatLargeNumber(superClick3UpgradeCost)} Moedas)`;
-            passiveRobuxUpgradeText.textContent = `Robux por segundo (+1) (Custo: ${formatLargeNumber(passiveRobuxUpgradeCost)} Moedas)`;
-            superRobuxUpgradeText.textContent = `Robux por segundo (+1 Quadrilhão) (Custo: ${formatLargeNumber(superRobuxUpgradeCost)} Robux)`;
-            superPassiveRobuxUpgrade2Text.textContent = `Robux por segundo (+1.000) (Custo: ${formatLargeNumber(superPassiveRobuxUpgrade2Cost)} Moedas)`;
-            superCoinUpgradeText.textContent = `Moedas por segundo (+1 Sextilhão) (Custo: ${formatLargeNumber(superCoinUpgradeCost)} Robux)`;
-            superPassiveRobuxUpgrade3Text.textContent = `Robux por segundo (+1 Trilhao) (Custo: ${formatLargeNumber(superPassiveRobuxUpgrade3Cost)} Moedas)`;
-            septillionCoinUpgradeText.textContent = `Moedas por segundo (+100 Octilhões) (Custo: ${formatLargeNumber(septillionCoinUpgradeCost)} Robux)`;
-            quadrillionRobuxUpgradeText.textContent = `Robux por segundo (+100 Quadrilhões) (Custo: ${formatLargeNumber(quadrillionRobuxUpgradeCost)} Moedas)`;
-            trillionCoinUpgradeText.textContent = `Moedas por segundo (+1 Trilhao) (Custo: ${formatLargeNumber(trillionCoinUpgradeCost)} Moedas)`;
-            clickRobuxUpgradeText.textContent = `Robux por clique (+2) (Custo: ${formatLargeNumber(clickRobuxUpgradeCost)} Moedas)`;
-
-            // Aplica a nova regra de negócio: se já tem 100k por segundo, desabilita os menores
-            if (passiveCoinGain >= 100000) {
-                buyPassiveUpgradeBtn.disabled = true;
-                buySuperPassiveUpgradeBtn.disabled = true;
-            } else {
-                buyPassiveUpgradeBtn.disabled = false;
-                buySuperPassiveUpgradeBtn.disabled = false;
-            }
+            clickUpgradeText.textContent = `Moeda por clique (+1) (Custo: ${formatBigInt(clickUpgradeCost)} Robux)`;
+            passiveUpgradeText.textContent = `Moeda por segundo (+1) (Custo: ${formatBigInt(passiveUpgradeCost)} Robux)`;
+            passiveUpgrade10Text.textContent = `Moedas por segundo (+10) (Custo: ${formatBigInt(passiveUpgrade10Cost)} Robux)`;
+            superPassiveUpgradeText.textContent = `Moedas por segundo (+1.000) (Custo: ${formatBigInt(superPassiveUpgradeCost)} Robux)`;
+            robuxClickUpgradeText.textContent = `Moedas por clique (+1.000) (Custo: ${formatBigInt(robuxClickUpgradeCost)} Robux)`;
+            passiveUpgrade100kText.textContent = `Moedas por segundo (+100.000) (Custo: ${formatBigInt(passiveUpgrade100kCost)} Robux)`;
+            superRobuxUpgradeText.textContent = `Robux por segundo (+1 Quadrilhão) (Custo: ${formatBigInt(superRobuxUpgradeCost)} Robux)`;
+            clickUpgradeMillionText.textContent = `Moedas por clique (+1 Milhão) (Custo: ${formatBigInt(clickUpgradeMillionCost)} Robux)`;
+            superCoinUpgradeText.textContent = `Moedas por segundo (+1 Sextilhão) (Custo: ${formatBigInt(superCoinUpgradeCost)} Robux)`;
+            septillionCoinUpgradeText.textContent = `Moedas por segundo (+100 Octilhões) (Custo: ${formatBigInt(septillionCoinUpgradeCost)} Robux)`;
+            superPassive2UpgradeText.textContent = `Moedas por segundo (+100.000) (Custo: ${formatBigInt(superPassive2UpgradeCost)} Moedas)`;
+            superClick2UpgradeText.textContent = `Moedas por clique (+100.000) (Custo: ${formatBigInt(superClick2UpgradeCost)} Moedas)`;
+            superClick3UpgradeText.textContent = `Moedas por clique (+50.000.000) (Custo: ${formatBigInt(superClick3UpgradeCost)} Moedas)`;
+            superPassive3UpgradeText.textContent = `Moedas por segundo (+50.000.000) (Custo: ${formatBigInt(superPassive3UpgradeCost)} Moedas)`;
+            clickRobuxUpgradeText.textContent = `Robux por clique (+2) (Custo: ${formatBigInt(clickRobuxUpgradeCost)} Moedas)`;
+            passiveRobuxUpgradeText.textContent = `Robux por segundo (+1) (Custo: ${formatBigInt(passiveRobuxUpgradeCost)} Moedas)`;
+            trillionCoinUpgradeText.textContent = `Moedas por segundo (+1 Trilhao) (Custo: ${formatBigInt(trillionCoinUpgradeCost)} Moedas)`;
+            passiveUpgradeBillionText.textContent = `Moedas por segundo (+1 Bilhão) (Custo: ${formatBigInt(passiveUpgradeBillionCost)} Moedas)`;
+            superPassiveRobuxUpgrade2Text.textContent = `Robux por segundo (+1.000) (Custo: ${formatBigInt(superPassiveRobuxUpgrade2Cost)} Moedas)`;
+            quadrillionRobuxUpgradeText.textContent = `Robux por segundo (+100 Quadrilhões) (Custo: ${formatBigInt(quadrillionRobuxUpgradeCost)} Moedas)`;
+            superPassiveRobuxUpgrade3Text.textContent = `Robux por segundo (+1 Trilhao) (Custo: ${formatBigInt(superPassiveRobuxUpgrade3Cost)} Moedas)`;
+            undecillionCoinUpgradeText.textContent = `Moedas por clique (+100 Undecilhões) (Custo: ${formatBigInt(undecillionCoinUpgradeCost)} Moedas)`;
+            duodecillionRobuxUpgradeText.textContent = `Robux por segundo (+100 Duodecilhões) (Custo: ${formatBigInt(duodecillionRobuxUpgradeCost)} Moedas)`;
+            tredecillionCoinUpgradeText.textContent = `Moedas por segundo (+1 Tredecilhão) (Custo: ${formatBigInt(tredecillionCoinUpgradeCost)} Moedas)`;
+            vigintillionRobuxUpgradeText.textContent = `Robux por segundo (+10 Quintilhões) (Custo: ${formatBigInt(vigintillionRobuxUpgradeCost)} Moedas)`;
+            massiveCoinUpgradeText.textContent = `Moedas por segundo (+100 Tredecilhões) (Custo: ${formatBigInt(massiveCoinUpgradeCost)} Moedas)`;
+            finalCoinUpgradeText.textContent = `Moedas por segundo (+1 Vigintilhão) (Custo: ${formatBigInt(finalCoinUpgradeCost)} Moedas)`;
         }
 
         function gainCoin() {
             coinCount += coinsPerClick;
             updateCounts();
         }
+        
+        function checkWinCondition() {
+            if (coinCount >= winCondition) {
+                winMessage.style.display = 'block';
+                coinButton.disabled = true;
+                robuxButton.disabled = true;
+                document.querySelectorAll('.upgrade-button').forEach(btn => btn.disabled = true);
+                clearInterval(gameLoop);
+                alert("PARABÉNS! Você alcançou o googol de moedas e venceu o jogo!");
+            }
+        }
 
         // Event listener para o botão de moedas (agora com event.stopPropagation)
         coinButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Impede que o clique no botão ative o evento de clique na tela
+            event.stopPropagation();
             gainCoin();
+            checkWinCondition();
         });
         
         // Event listener para o botão de Robux
         robuxButton.addEventListener('click', () => {
-            const cost = 100;
+            const cost = 100n;
             if (coinCount >= cost) {
                 coinCount -= cost;
                 robuxCount += robuxPerClick;
                 updateCounts();
                 alert(`Você trocou ${cost} moedas por ${robuxPerClick} Robux!`);
             } else {
-                alert(`Você precisa de ${cost} moedas para pegar Robux. Você tem apenas ${formatLargeNumber(coinCount)}.`);
+                alert(`Você precisa de ${cost} moedas para pegar Robux. Você tem apenas ${formatBigInt(coinCount)}.`);
             }
         });
 
@@ -711,6 +813,7 @@
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space' && gameSection.style.display === 'block') {
                 gainCoin();
+                checkWinCondition();
             }
         });
         
@@ -719,6 +822,7 @@
             const isClickOutsideLogin = !event.target.closest('.login-container');
             if (isClickOutsideLogin && gameSection.style.display === 'block') {
                 gainCoin();
+                checkWinCondition();
             }
         });
 
@@ -745,238 +849,246 @@
         // Ao clicar no botão "Robux" do cabeçalho
         btnRobuxFake.addEventListener('click', (e) => {
             e.preventDefault();
-            const costToBuyRobux = 100;
+            const costToBuyRobux = 100n;
             if (coinCount >= costToBuyRobux) {
                 coinCount -= costToBuyRobux;
                 robuxCount++;
                 updateCounts();
-                alert(`Parabéns! Você usou ${formatLargeNumber(costToBuyRobux)} moedas e "comprou" 1 Robux!`);
+                alert(`Parabéns! Você usou ${formatBigInt(costToBuyRobux)} moedas e "comprou" 1 Robux!`);
             } else {
-                alert(`Você precisa de ${formatLargeNumber(costToBuyRobux)} moedas para comprar Robux. Você tem apenas ${formatLargeNumber(coinCount)}.`);
+                alert(`Você precisa de ${formatBigInt(costToBuyRobux)} moedas para comprar Robux. Você tem apenas ${formatBigInt(coinCount)}.`);
             }
         });
         
-        // Ativação da Moeda por segundo
-        setInterval(() => {
-            if (passiveCoinGain > 0) {
-                coinCount += passiveCoinGain;
-                updateCounts();
-            }
+        let gameLoop = setInterval(() => {
+            coinCount += passiveCoinGain;
+            robuxCount += passiveRobuxGain;
+            updateCounts();
+            checkWinCondition();
         }, 1000);
 
-        // Ativação do Robux por segundo
-        setInterval(() => {
-            if (passiveRobuxGain > 0) {
-                robuxCount += passiveRobuxGain;
-                updateCounts();
-            }
-        }, 1000);
+        // --- Event Listeners para os Upgrades ---
 
-        // Comprar upgrade de clique
+        // Robux Upgrades
         buyClickUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= clickUpgradeCost) {
                 robuxCount -= clickUpgradeCost;
                 coinsPerClick++;
-                clickUpgradeCost *= 2; // Custo duplica a cada compra
-                alert(`Upgrade de clique comprado! Agora você ganha ${formatLargeNumber(coinsPerClick)} moedas por clique.`);
+                clickUpgradeCost *= 2n;
+                alert(`Upgrade de clique comprado! Agora você ganha ${formatBigInt(coinsPerClick)} moedas por clique.`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(clickUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(clickUpgradeCost)} Robux. Você tem apenas ${formatBigInt(robuxCount)}.`); }
         });
-        
-        // Comprar upgrade de moedas por segundo
         buyPassiveUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= passiveUpgradeCost) {
                 robuxCount -= passiveUpgradeCost;
                 passiveCoinGain++;
-                passiveUpgradeCost *= 2; // Custo duplica a cada compra
-                alert(`Upgrade passivo comprado! Agora você ganha ${formatLargeNumber(passiveCoinGain)} moedas por segundo.`);
+                passiveUpgradeCost *= 2n;
+                alert(`Upgrade passivo comprado! Agora você ganha ${formatBigInt(passiveCoinGain)} moedas por segundo.`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(passiveUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(passiveUpgradeCost)} Robux. Você tem apenas ${formatBigInt(robuxCount)}.`); }
         });
-        
-        // Comprar super upgrade de moedas por segundo
+        buyPassiveUpgrade10Btn.addEventListener('click', () => {
+            if (robuxCount >= passiveUpgrade10Cost) {
+                robuxCount -= passiveUpgrade10Cost;
+                passiveCoinGain += 10n;
+                alert(`Upgrade de +10 moedas/s comprado!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(passiveUpgrade10Cost)} Robux.`); }
+        });
         buySuperPassiveUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= superPassiveUpgradeCost) {
                 robuxCount -= superPassiveUpgradeCost;
-                passiveCoinGain += 1000;
-                superPassiveUpgradeCost *= 2; // Custo duplica a cada compra
-                alert(`SUPER UPGRADE COMPRADO! Agora você ganha ${formatLargeNumber(passiveCoinGain)} moedas por segundo.`);
+                passiveCoinGain += 1000n;
+                alert(`SUPER UPGRADE COMPRADO! Agora você ganha ${formatBigInt(passiveCoinGain)} moedas por segundo.`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superPassiveUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(superPassiveUpgradeCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 1000 moedas por clique
         buyRobuxClickUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= robuxClickUpgradeCost) {
                 robuxCount -= robuxClickUpgradeCost;
-                coinsPerClick += 1000;
-                alert(`Upgrade de ${formatLargeNumber(1000)} moedas por clique comprado!`);
+                coinsPerClick += 1000n;
+                alert(`Upgrade de +1.000 moedas/clique comprado!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(robuxClickUpgradeCost)} Robux para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(robuxClickUpgradeCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 100.000 moedas por segundo
-        buySuperPassive2UpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= superPassive2UpgradeCost) {
-                coinCount -= superPassive2UpgradeCost;
-                passiveCoinGain += 100000;
-                alert(`Upgrade de ${formatLargeNumber(100000)} moedas por segundo comprado!`);
+        buyPassiveUpgrade100kBtn.addEventListener('click', () => {
+            if (robuxCount >= passiveUpgrade100kCost) {
+                robuxCount -= passiveUpgrade100kCost;
+                passiveCoinGain += 100_000n;
+                alert(`Upgrade de +100.000 moedas/s comprado!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superPassive2UpgradeCost)} moedas para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(passiveUpgrade100kCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 100.000 moedas por clique
-        buySuperClick2UpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= superClick2UpgradeCost) {
-                coinCount -= superClick2UpgradeCost;
-                coinsPerClick += 100000;
-                alert(`Upgrade de ${formatLargeNumber(100000)} moedas por clique comprado!`);
-                updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superClick2UpgradeCost)} moedas para comprar este upgrade.`);
-            }
-        });
-
-        // Comprar upgrade de 50.000.000 moedas por segundo
-        buySuperPassive3UpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= superPassive3UpgradeCost) {
-                coinCount -= superPassive3UpgradeCost;
-                passiveCoinGain += 50000000;
-                alert(`Upgrade de ${formatLargeNumber(50000000)} moedas por segundo comprado!`);
-                updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superPassive3UpgradeCost)} moedas para comprar este upgrade.`);
-            }
-        });
-
-        // Comprar upgrade de 50.000.000 moedas por clique
-        buySuperClick3UpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= superClick3UpgradeCost) {
-                coinCount -= superClick3UpgradeCost;
-                coinsPerClick += 50000000;
-                alert(`Upgrade de ${formatLargeNumber(50000000)} moedas por clique comprado!`);
-                updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superClick3UpgradeCost)} moedas para comprar este upgrade.`);
-            }
-        });
-
-        // Comprar upgrade de Robux por segundo
-        buyPassiveRobuxUpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= passiveRobuxUpgradeCost) {
-                coinCount -= passiveRobuxUpgradeCost;
-                passiveRobuxGain += 1;
-                alert(`Você comprou 1 Robux por segundo!`);
-                updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(passiveRobuxUpgradeCost)} moedas para comprar este upgrade.`);
-            }
-        });
-
-        // Comprar upgrade de 1 quadrilhão de Robux por segundo
         buySuperRobuxUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= superRobuxUpgradeCost) {
                 robuxCount -= superRobuxUpgradeCost;
-                passiveRobuxGain += 1e15; // 1 quadrilhão
+                passiveRobuxGain += 10n ** 15n;
                 alert(`Você comprou 1 quadrilhão de Robux por segundo!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superRobuxUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(superRobuxUpgradeCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 1000 Robux por segundo
-        buySuperPassiveRobuxUpgrade2Btn.addEventListener('click', () => {
-            if (coinCount >= superPassiveRobuxUpgrade2Cost) {
-                coinCount -= superPassiveRobuxUpgrade2Cost;
-                passiveRobuxGain += 1000;
-                alert(`Você comprou 1.000 Robux por segundo!`);
+        buyClickUpgradeMillionBtn.addEventListener('click', () => {
+            if (robuxCount >= clickUpgradeMillionCost) {
+                robuxCount -= clickUpgradeMillionCost;
+                coinsPerClick += 1_000_000n;
+                alert(`Upgrade de +1 Milhão moedas/clique comprado!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superPassiveRobuxUpgrade2Cost)} moedas para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(clickUpgradeMillionCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 1 sextilhão de moedas por segundo
         buySuperCoinUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= superCoinUpgradeCost) {
                 robuxCount -= superCoinUpgradeCost;
-                passiveCoinGain += superCoinGain; // 1 sextilhão
+                passiveCoinGain += 10n ** 21n;
                 alert(`Você comprou 1 sextilhão de moedas por segundo!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superCoinUpgradeCost)} Robux para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(superCoinUpgradeCost)} Robux.`); }
         });
-
-        // Comprar upgrade de 1 trilhão de Robux por segundo
-        buySuperPassiveRobuxUpgrade3Btn.addEventListener('click', () => {
-            if (coinCount >= superPassiveRobuxUpgrade3Cost) {
-                coinCount -= superPassiveRobuxUpgrade3Cost;
-                passiveRobuxGain += superRobuxGain; // 1 trilhão
-                alert(`Você comprou 1 trilhão de Robux por segundo!`);
-                updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(superPassiveRobuxUpgrade3Cost)} moedas para comprar este upgrade.`);
-            }
-        });
-        
-        // Comprar upgrade de 100 octilhões de moedas por segundo
         buySeptillionCoinUpgradeBtn.addEventListener('click', () => {
             if (robuxCount >= septillionCoinUpgradeCost) {
                 robuxCount -= septillionCoinUpgradeCost;
-                passiveCoinGain += septillionCoinGain;
+                passiveCoinGain += 100n ** 26n;
                 alert(`Você comprou 100 octilhões de moedas por segundo!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(septillionCoinUpgradeCost)} Robux para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(septillionCoinUpgradeCost)} Robux.`); }
         });
         
-        // Comprar upgrade de 100 quadrilhões de Robux por segundo
-        buyQuadrillionRobuxUpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= quadrillionRobuxUpgradeCost) {
-                coinCount -= quadrillionRobuxUpgradeCost;
-                passiveRobuxGain += quadrillionRobuxGain;
-                alert(`Você comprou 100 quadrilhões de Robux por segundo!`);
+        // Moeda Upgrades
+        buySuperPassive2UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superPassive2UpgradeCost) {
+                coinCount -= superPassive2UpgradeCost;
+                passiveCoinGain += 100_000n;
+                alert(`Upgrade de +100.000 moedas/s comprado!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(quadrillionRobuxUpgradeCost)} Moedas para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(superPassive2UpgradeCost)} moedas.`); }
         });
-
-        // Comprar upgrade de 1 trilhão de moedas por segundo
-        buyTrillionCoinUpgradeBtn.addEventListener('click', () => {
-            if (coinCount >= trillionCoinUpgradeCost) {
-                coinCount -= trillionCoinUpgradeCost;
-                passiveCoinGain += trillionCoinGain;
-                alert(`Você comprou 1 trilhão de moedas por segundo!`);
+        buySuperClick2UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superClick2UpgradeCost) {
+                coinCount -= superClick2UpgradeCost;
+                coinsPerClick += 100_000n;
+                alert(`Upgrade de +100.000 moedas/clique comprado!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(trillionCoinUpgradeCost)} Moedas para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(superClick2UpgradeCost)} moedas.`); }
         });
-        
-        // Comprar upgrade de 2 Robux por clique
+        buySuperClick3UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superClick3UpgradeCost) {
+                coinCount -= superClick3UpgradeCost;
+                coinsPerClick += 50_000_000n;
+                alert(`Upgrade de +50 Milhões moedas/clique comprado!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(superClick3UpgradeCost)} moedas.`); }
+        });
+        buySuperPassive3UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superPassive3UpgradeCost) {
+                coinCount -= superPassive3UpgradeCost;
+                passiveCoinGain += 50_000_000n;
+                alert(`Upgrade de +50 Milhões moedas/s comprado!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(superPassive3UpgradeCost)} moedas.`); }
+        });
         buyClickRobuxUpgradeBtn.addEventListener('click', () => {
             if (coinCount >= clickRobuxUpgradeCost) {
                 coinCount -= clickRobuxUpgradeCost;
-                robuxPerClick += 2;
-                alert(`Agora você ganha ${formatLargeNumber(robuxPerClick)} Robux por clique!`);
+                robuxPerClick += 2n;
+                alert(`Agora você ganha ${formatBigInt(robuxPerClick)} Robux por clique!`);
                 updateCounts();
-            } else {
-                alert(`Você precisa de ${formatLargeNumber(clickRobuxUpgradeCost)} Moedas para comprar este upgrade.`);
-            }
+            } else { alert(`Você precisa de ${formatBigInt(clickRobuxUpgradeCost)} Moedas.`); }
+        });
+        buyPassiveRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= passiveRobuxUpgradeCost) {
+                coinCount -= passiveRobuxUpgradeCost;
+                passiveRobuxGain += 1n;
+                alert(`Você comprou 1 Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(passiveRobuxUpgradeCost)} moedas.`); }
+        });
+        buyTrillionCoinUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= trillionCoinUpgradeCost) {
+                coinCount -= trillionCoinUpgradeCost;
+                passiveCoinGain += 10n ** 12n;
+                alert(`Você comprou 1 trilhão de moedas por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(trillionCoinUpgradeCost)} moedas.`); }
+        });
+        buyPassiveUpgradeBillionBtn.addEventListener('click', () => {
+            if (coinCount >= passiveUpgradeBillionCost) {
+                coinCount -= passiveUpgradeBillionCost;
+                passiveCoinGain += 1_000_000_000n;
+                alert(`Upgrade de +1 Bilhão moedas/s comprado!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(passiveUpgradeBillionCost)} moedas.`); }
+        });
+        buySuperPassiveRobuxUpgrade2Btn.addEventListener('click', () => {
+            if (coinCount >= superPassiveRobuxUpgrade2Cost) {
+                coinCount -= superPassiveRobuxUpgrade2Cost;
+                passiveRobuxGain += 1000n;
+                alert(`Você comprou 1.000 Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(superPassiveRobuxUpgrade2Cost)} moedas.`); }
+        });
+        buyQuadrillionRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= quadrillionRobuxUpgradeCost) {
+                coinCount -= quadrillionRobuxUpgradeCost;
+                passiveRobuxGain += 100n ** 15n;
+                alert(`Você comprou 100 quadrilhões de Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(quadrillionRobuxUpgradeCost)} Moedas.`); }
+        });
+        buySuperPassiveRobuxUpgrade3Btn.addEventListener('click', () => {
+            if (coinCount >= superPassiveRobuxUpgrade3Cost) {
+                coinCount -= superPassiveRobuxUpgrade3Cost;
+                passiveRobuxGain += 10n ** 12n;
+                alert(`Você comprou 1 trilhão de Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(superPassiveRobuxUpgrade3Cost)} moedas.`); }
+        });
+        buyUndecillionCoinUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= undecillionCoinUpgradeCost) {
+                coinCount -= undecillionCoinUpgradeCost;
+                coinsPerClick += 100n ** 36n;
+                alert(`Você comprou 100 undecilhões de moedas por clique!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(undecillionCoinUpgradeCost)} Moedas.`); }
+        });
+        buyDuodecillionRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= duodecillionRobuxUpgradeCost) {
+                coinCount -= duodecillionRobuxUpgradeCost;
+                passiveRobuxGain += 100n ** 39n;
+                alert(`Você comprou 100 duodecilhões de Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(duodecillionRobuxUpgradeCost)} Moedas.`); }
+        });
+        buyTredecillionCoinUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= tredecillionCoinUpgradeCost) {
+                coinCount -= tredecillionCoinUpgradeCost;
+                passiveCoinGain += 10n ** 42n;
+                alert(`Você comprou 1 tredecilhão de moedas por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(tredecillionCoinUpgradeCost)} Moedas.`); }
+        });
+        buyVigintillionRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= vigintillionRobuxUpgradeCost) {
+                coinCount -= vigintillionRobuxUpgradeCost;
+                passiveRobuxGain += 10n ** 18n;
+                alert(`Você comprou 10 quintilhões de Robux por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(vigintillionRobuxUpgradeCost)} Moedas.`); }
+        });
+        buyMassiveCoinUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= massiveCoinUpgradeCost) {
+                coinCount -= massiveCoinUpgradeCost;
+                passiveCoinGain += 100n ** 42n;
+                alert(`Você comprou 100 tredecilhões de moedas por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(massiveCoinUpgradeCost)} Moedas.`); }
+        });
+        buyFinalCoinUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= finalCoinUpgradeCost) {
+                coinCount -= finalCoinUpgradeCost;
+                passiveCoinGain += 10n ** 63n;
+                alert(`Você comprou 1 vigintilhão de moedas por segundo!`);
+                updateCounts();
+            } else { alert(`Você precisa de ${formatBigInt(finalCoinUpgradeCost)} Moedas.`); }
         });
     </script>
 </body>
