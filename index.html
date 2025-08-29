@@ -811,7 +811,7 @@
 
         // Event listener para a tecla "Espaço"
         document.addEventListener('keydown', (event) => {
-            if (event.code === 'Space' && gameSection.style.display === 'block') {
+            if (event.code === 'Space' && gameSection.style.display === 'block' && !event.repeat) {
                 gainCoin();
                 checkWinCondition();
             }
