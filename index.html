@@ -6,10 +6,27 @@
     <title>Entrar na Roblox</title>
 
     <style>
+        /* Variáveis CSS para facilitar a manutenção */
+        :root {
+            --bg-dark: #1e1e1e;
+            --bg-medium: #2b2b2b;
+            --bg-header: #232527;
+            --text-light: #fff;
+            --text-grey: #ccc;
+            --input-bg: #3b3b3b;
+            --button-blue: #007bff;
+            --button-grey: #555;
+            --link-blue: #00a2ff;
+            --border-grey: #444;
+            --font-family-roblox: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --button-disabled-bg: #444;
+            --button-disabled-text: #888;
+        }
+
         body {
-            background-color: #1a1a1a;
-            color: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-family-roblox);
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -18,11 +35,12 @@
 
         /* --- Estilos do Cabeçalho (Header) --- */
         .header {
-            background-color: #232527;
+            background-color: var(--bg-header);
             padding: 10px 20px;
             display: flex;
             flex-direction: column;
-            border-bottom: 1px solid #3b3b3b;
+            border-bottom: 1px solid var(--border-grey);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .header-top {
@@ -30,16 +48,20 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .header-top .header-left {
             display: flex;
             align-items: center;
-            gap: 20px;
         }
-
-        /* Removido .header-logo */
+        
+        .header-app-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-left: 5px;
+        }
 
         .header-right {
             display: flex;
@@ -48,55 +70,66 @@
         }
 
         .btn-header {
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             text-align: center;
             cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
         }
 
         .btn-signup {
-            background-color: #007bff;
-            color: #fff;
+            background-color: var(--button-blue);
+            color: var(--text-light);
             border: none;
         }
 
+        .btn-signup:hover {
+            background-color: #0069d9;
+        }
+
         .btn-login-header {
-            background-color: #555;
-            color: #1a1a1a;
-            border: 1px solid #444;
+            background-color: var(--button-grey);
+            color: var(--text-light);
+            border: 1px solid var(--border-grey);
         }
         
+        .btn-login-header:hover {
+            background-color: #6a6a6a;
+        }
+
         .search-icon {
             width: 20px;
             height: 20px;
             filter: invert(1);
+            cursor: pointer;
         }
 
         .header-bottom {
             display: flex;
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            padding-left: 50px;
         }
 
         .nav-links {
             display: flex;
             gap: 25px;
-            /* margin-left: 50px; Removido ou ajustado se precisar de alinhamento */
         }
 
         .nav-links a {
-            color: #ccc;
+            color: var(--text-grey);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             transition: color 0.3s;
+            padding: 5px 0;
         }
 
         .nav-links a:hover {
-            color: #fff;
+            color: var(--text-light);
         }
 
         /* --- Estilos da Tela de Login --- */
@@ -105,25 +138,27 @@
             justify-content: center;
             align-items: center;
             flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .login-container {
-            background-color: #2b2b2b;
+            background-color: var(--bg-medium);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            width: 380px;
+            width: 100%;
+            max-width: 380px;
             box-sizing: border-box;
             text-align: center;
         }
-
-        /* Removido .roblox-logo */
 
         h2 {
             margin: 0;
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 25px; /* Adicionado margem para compensar a remoção da logo */
+            margin-bottom: 25px;
+            color: var(--text-light);
         }
 
         .input-group {
@@ -135,8 +170,8 @@
             padding: 14px 15px;
             border: none;
             border-radius: 6px;
-            background-color: #3b3b3b;
-            color: #fff;
+            background-color: var(--input-bg);
+            color: var(--text-light);
             font-size: 16px;
             box-sizing: border-box;
             outline: none;
@@ -144,11 +179,11 @@
         }
 
         .input-group input:focus {
-            box-shadow: 0 0 0 2px #00a2ff;
+            box-shadow: 0 0 0 2px var(--link-blue);
         }
 
         .input-group input::placeholder {
-            color: #999;
+            color: var(--text-grey);
         }
 
         .btn-login {
@@ -156,8 +191,8 @@
             padding: 15px;
             border: none;
             border-radius: 6px;
-            background-color: #444;
-            color: #fff;
+            background-color: var(--button-grey);
+            color: var(--text-light);
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
@@ -165,44 +200,186 @@
         }
 
         .btn-login:hover {
-            background-color: #555;
+            background-color: #6a6a6a;
         }
 
         .forgot-password a {
-            color: #00a2ff;
+            color: var(--link-blue);
             text-decoration: none;
             font-size: 14px;
             margin: 20px 0;
             display: block;
         }
 
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
         .recovery-options button {
             width: 100%;
             padding: 15px;
-            border: 1px solid #444;
+            border: 1px solid var(--border-grey);
             border-radius: 6px;
-            background-color: #2b2b2b;
-            color: #fff;
+            background-color: var(--bg-medium);
+            color: var(--text-light);
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .recovery-options button:hover {
             background-color: #3b3b3b;
+            border-color: #6a6a6a;
         }
 
         .signup-link {
             margin-top: 25px;
             font-size: 14px;
-            color: #ccc;
+            color: var(--text-grey);
         }
 
         .signup-link a {
-            color: #00a2ff;
+            color: var(--link-blue);
             text-decoration: none;
             font-weight: bold;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Estilos do Jogo --- */
+        #game-section {
+            text-align: center;
+            display: none; /* Inicia escondido */
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--bg-medium);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 380px;
+            box-sizing: border-box;
+            margin: 20px auto;
+        }
+        
+        #game-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .game-status {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            font-size: 24px;
+            word-wrap: break-word; /* Garante que os números longos quebrem a linha */
+        }
+        
+        .coin-status, .robux-status {
+            font-weight: bold;
+            color: gold;
+        }
+
+        #coin-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #coin-button:hover {
+            background-color: #218838;
+        }
+
+        .upgrades {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+        }
+        
+        .upgrade-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--input-bg);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .upgrade-button {
+            background-color: var(--button-blue);
+            color: var(--text-light);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .upgrade-button:hover {
+            background-color: #0069d9;
+        }
+
+        .upgrade-button:disabled {
+            background-color: var(--button-disabled-bg);
+            color: var(--button-disabled-text);
+            cursor: not-allowed;
+        }
+
+        /* --- Estilos do Pop-up de Senha --- */
+        #password-modal {
+            display: none; /* Inicia escondido */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: var(--bg-medium);
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #password-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--border-grey);
+            background-color: var(--input-bg);
+            color: var(--text-light);
+            outline: none;
+        }
+
+        #password-submit {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: var(--button-blue);
+            color: var(--text-light);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -211,10 +388,11 @@
     <header class="header">
         <div class="header-top">
             <div class="header-left">
-                </div>
+                <span class="header-app-name">Roblox</span>
+            </div>
             <div class="header-right">
-                <a href="#" class="btn-header btn-signup">Cadastrar-se</a>
-                <a href="#" class="btn-header btn-login-header">Entrar</a>
+                <a href="https://www.roblox.com/Login/SignUp.aspx" class="btn-header btn-signup">Cadastrar-se</a>
+                <a href="https://www.roblox.com/login" class="btn-header btn-login-header">Entrar</a>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_search_icon.svg" alt="Ícone de Pesquisa" class="search-icon">
             </div>
         </div>
@@ -223,7 +401,8 @@
                 <a href="#">Destaques</a>
                 <a href="#">Mercado</a>
                 <a href="#">Criar</a>
-                <a href="#">Robux</a>
+                <a href="#" id="btn-game">Jogo</a>
+                <a href="#" id="btn-robux-fake">Robux</a>
             </nav>
         </div>
     </header>
@@ -252,10 +431,476 @@
             </div>
 
             <div class="signup-link">
-                Não possui uma conta? <a href="#">Cadastrar-se</a>
+                Não possui uma conta? <a href="https://www.roblox.com/Login/SignUp.aspx">Cadastrar-se</a>
             </div>
         </div>
     </section>
 
+    <section id="game-section">
+        <h3>Seu Jogo de Moedas</h3>
+        <div class="game-status">
+            <p>Moedas: <span class="coin-status" id="coin-count">0</span></p>
+            <p>Robux: <span class="robux-status" id="robux-count">0</span></p>
+        </div>
+        <button id="coin-button">Ganhar Moeda</button>
+
+        <div class="upgrades">
+            <h4>Upgrades</h4>
+            <div class="upgrade-item">
+                <span id="click-upgrade-text">Moeda por clique (+1) (Custo: 2 Robux)</span>
+                <button class="upgrade-button" id="buy-click-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="passive-upgrade-text">Moeda por segundo (+1) (Custo: 2 Robux)</span>
+                <button class="upgrade-button" id="buy-passive-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="robux-click-upgrade-text">Moedas por clique (+1.000) (Custo: 20 Robux)</span>
+                <button class="upgrade-button" id="buy-robux-click-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-passive-upgrade-text">Moedas por segundo (+1.000) (Custo: 10 Robux)</span>
+                <button class="upgrade-button" id="buy-super-passive-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-passive-2-upgrade-text">Moedas por segundo (+100.000) (Custo: 100.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-2-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-click-2-upgrade-text">Moedas por clique (+100.000) (Custo: 100.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-click-2-upgrade">Comprar</button>
+            </div>
+             <div class="upgrade-item">
+                <span id="super-passive-3-upgrade-text">Moedas por segundo (+50.000.000) (Custo: 300.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-3-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-click-3-upgrade-text">Moedas por clique (+50.000.000) (Custo: 100.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-click-3-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="passive-robux-upgrade-text">Robux por segundo (+1) (Custo: 1.000.000.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-passive-robux-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-robux-upgrade-text">Robux por segundo (+1 Quadrilhão) (Custo: 10.000 Robux)</span>
+                <button class="upgrade-button" id="buy-super-robux-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-passive-robux-upgrade-2-text">Robux por segundo (+1.000) (Custo: 100.000.000.000.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-robux-upgrade-2">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-coin-upgrade-text">Moedas por segundo (+1 Sextilhão) (Custo: 1.000.000 Robux)</span>
+                <button class="upgrade-button" id="buy-super-coin-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="super-passive-robux-upgrade-3-text">Robux por segundo (+1 Trilhao) (Custo: 10.000.000.000.000.000.000.000.000.000.000 Moedas)</span>
+                <button class="upgrade-button" id="buy-super-passive-robux-upgrade-3">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="septillion-coin-upgrade-text">Moedas por segundo (+100 Octilhões) (Custo: 10 Quintilhões Robux)</span>
+                <button class="upgrade-button" id="buy-septillion-coin-upgrade">Comprar</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="quadrillion-robux-upgrade-text">Robux por segundo (+100 Quadrilhões) (Custo: 100 Quintilhões Moedas)</span>
+                <button class="upgrade-button" id="buy-quadrillion-robux-upgrade">Comprar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <h3>Digite a senha para jogar</h3>
+            <input type="password" id="password-input" placeholder="Senha">
+            <button id="password-submit">Entrar</button>
+        </div>
+    </div>
+
+    <script>
+        const btnGame = document.getElementById('btn-game');
+        const passwordModal = document.getElementById('password-modal');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const gameSection = document.getElementById('game-section');
+        const coinButton = document.getElementById('coin-button');
+        const coinCountDisplay = document.getElementById('coin-count');
+        const robuxCountDisplay = document.getElementById('robux-count');
+        const btnRobuxFake = document.getElementById('btn-robux-fake');
+        
+        const buyClickUpgradeBtn = document.getElementById('buy-click-upgrade');
+        const buyPassiveUpgradeBtn = document.getElementById('buy-passive-upgrade');
+        const buyRobuxClickUpgradeBtn = document.getElementById('buy-robux-click-upgrade');
+        const buySuperPassiveUpgradeBtn = document.getElementById('buy-super-passive-upgrade');
+        const buySuperPassive2UpgradeBtn = document.getElementById('buy-super-passive-2-upgrade');
+        const buySuperClick2UpgradeBtn = document.getElementById('buy-super-click-2-upgrade');
+        const buySuperPassive3UpgradeBtn = document.getElementById('buy-super-passive-3-upgrade');
+        const buySuperClick3UpgradeBtn = document.getElementById('buy-super-click-3-upgrade');
+        const buyPassiveRobuxUpgradeBtn = document.getElementById('buy-passive-robux-upgrade');
+        const buySuperRobuxUpgradeBtn = document.getElementById('buy-super-robux-upgrade');
+        const buySuperPassiveRobuxUpgrade2Btn = document.getElementById('buy-super-passive-robux-upgrade-2');
+        const buySuperCoinUpgradeBtn = document.getElementById('buy-super-coin-upgrade');
+        const buySuperPassiveRobuxUpgrade3Btn = document.getElementById('buy-super-passive-robux-upgrade-3');
+        const buySeptillionCoinUpgradeBtn = document.getElementById('buy-septillion-coin-upgrade');
+        const buyQuadrillionRobuxUpgradeBtn = document.getElementById('buy-quadrillion-robux-upgrade');
+        
+        const clickUpgradeText = document.getElementById('click-upgrade-text');
+        const passiveUpgradeText = document.getElementById('passive-upgrade-text');
+        const robuxClickUpgradeText = document.getElementById('robux-click-upgrade-text');
+        const superPassiveUpgradeText = document.getElementById('super-passive-upgrade-text');
+        const superPassive2UpgradeText = document.getElementById('super-passive-2-upgrade-text');
+        const superClick2UpgradeText = document.getElementById('super-click-2-upgrade-text');
+        const superPassive3UpgradeText = document.getElementById('super-passive-3-upgrade-text');
+        const superClick3UpgradeText = document.getElementById('super-click-3-upgrade-text');
+        const passiveRobuxUpgradeText = document.getElementById('passive-robux-upgrade-text');
+        const superRobuxUpgradeText = document.getElementById('super-robux-upgrade-text');
+        const superPassiveRobuxUpgrade2Text = document.getElementById('super-passive-robux-upgrade-2-text');
+        const superCoinUpgradeText = document.getElementById('super-coin-upgrade-text');
+        const superPassiveRobuxUpgrade3Text = document.getElementById('super-passive-robux-upgrade-3-text');
+        const septillionCoinUpgradeText = document.getElementById('septillion-coin-upgrade-text');
+        const quadrillionRobuxUpgradeText = document.getElementById('quadrillion-robux-upgrade-text');
+
+        let coinCount = 0;
+        let robuxCount = 0;
+        let coinsPerClick = 1;
+        let passiveCoinGain = 0;
+        let passiveRobuxGain = 0;
+        
+        let clickUpgradeCost = 2;
+        let passiveUpgradeCost = 2;
+        let superPassiveUpgradeCost = 10;
+        
+        // Novos upgrades
+        const robuxClickUpgradeCost = 20;
+        const superPassive2UpgradeCost = 100000;
+        const superClick2UpgradeCost = 100000;
+        const superPassive3UpgradeCost = 300000000;
+        const superClick3UpgradeCost = 100000000;
+        const passiveRobuxUpgradeCost = 1e12; // 1 trilhão
+        const superRobuxUpgradeCost = 10000;
+        const superPassiveRobuxUpgrade2Cost = 1e17; // 100 quadrilhões
+        const superCoinUpgradeCost = 1e6; // 1 milhão
+        const superCoinGain = 1e21; // 1 sextilhão
+        const superPassiveRobuxUpgrade3Cost = 1e31; // 10 decilhões
+        const superRobuxGain = 1e12; // 1 trilhão
+        const septillionCoinUpgradeCost = 1e19; // 10 quintilhões
+        const septillionCoinGain = 1e26; // 100 octilhões
+        const quadrillionRobuxUpgradeCost = 1e20; // 100 quintilhões
+        const quadrillionRobuxGain = 1e17; // 100 quadrilhões
+
+        const numberNames = [
+            '', 'mil', 'milhões', 'bilhões', 'trilhões', 'quadrilhões',
+            'quintilhões', 'sextilhões', 'septilhões', 'octilhões', 'nonilhões', 'decilhões'
+        ];
+
+        function formatLargeNumber(num) {
+            if (num === 0) return '0';
+            let sign = '';
+            if (num < 0) {
+                sign = '-';
+                num = -num;
+            }
+
+            const numAbs = Math.abs(num);
+            const index = Math.floor(Math.log10(numAbs) / 3);
+            if (index < numberNames.length) {
+                const formattedNum = (numAbs / Math.pow(10, index * 3)).toFixed(1);
+                return `${sign}${parseFloat(formattedNum).toLocaleString('pt-BR')} ${numberNames[index]}`;
+            } else {
+                return sign + num.toExponential(2).replace('e+', ' E+');
+            }
+        }
+        
+        function updateCounts() {
+            coinCountDisplay.textContent = formatLargeNumber(coinCount);
+            robuxCountDisplay.textContent = formatLargeNumber(robuxCount);
+            
+            // Atualiza os textos dos upgrades
+            clickUpgradeText.textContent = `Moeda por clique (+1) (Custo: ${formatLargeNumber(clickUpgradeCost)} Robux)`;
+            passiveUpgradeText.textContent = `Moeda por segundo (+1) (Custo: ${formatLargeNumber(passiveUpgradeCost)} Robux)`;
+            robuxClickUpgradeText.textContent = `Moedas por clique (+1.000) (Custo: ${formatLargeNumber(robuxClickUpgradeCost)} Robux)`;
+            superPassiveUpgradeText.textContent = `Moedas por segundo (+1.000) (Custo: ${formatLargeNumber(superPassiveUpgradeCost)} Robux)`;
+            superPassive2UpgradeText.textContent = `Moedas por segundo (+100.000) (Custo: ${formatLargeNumber(superPassive2UpgradeCost)} Moedas)`;
+            superClick2UpgradeText.textContent = `Moedas por clique (+100.000) (Custo: ${formatLargeNumber(superClick2UpgradeCost)} Moedas)`;
+            superPassive3UpgradeText.textContent = `Moedas por segundo (+50.000.000) (Custo: ${formatLargeNumber(superPassive3UpgradeCost)} Moedas)`;
+            superClick3UpgradeText.textContent = `Moedas por clique (+50.000.000) (Custo: ${formatLargeNumber(superClick3UpgradeCost)} Moedas)`;
+            passiveRobuxUpgradeText.textContent = `Robux por segundo (+1) (Custo: ${formatLargeNumber(passiveRobuxUpgradeCost)} Moedas)`;
+            superRobuxUpgradeText.textContent = `Robux por segundo (+1 Quadrilhão) (Custo: ${formatLargeNumber(superRobuxUpgradeCost)} Robux)`;
+            superPassiveRobuxUpgrade2Text.textContent = `Robux por segundo (+1.000) (Custo: ${formatLargeNumber(superPassiveRobuxUpgrade2Cost)} Moedas)`;
+            superCoinUpgradeText.textContent = `Moedas por segundo (+1 Sextilhão) (Custo: ${formatLargeNumber(superCoinUpgradeCost)} Robux)`;
+            superPassiveRobuxUpgrade3Text.textContent = `Robux por segundo (+1 Trilhao) (Custo: ${formatLargeNumber(superPassiveRobuxUpgrade3Cost)} Moedas)`;
+            septillionCoinUpgradeText.textContent = `Moedas por segundo (+100 Octilhões) (Custo: ${formatLargeNumber(septillionCoinUpgradeCost)} Robux)`;
+            quadrillionRobuxUpgradeText.textContent = `Robux por segundo (+100 Quadrilhões) (Custo: ${formatLargeNumber(quadrillionRobuxUpgradeCost)} Moedas)`;
+
+            // Aplica a nova regra de negócio: se já tem 100k por segundo, desabilita os menores
+            if (passiveCoinGain >= 100000) {
+                buyPassiveUpgradeBtn.disabled = true;
+                buySuperPassiveUpgradeBtn.disabled = true;
+            } else {
+                buyPassiveUpgradeBtn.disabled = false;
+                buySuperPassiveUpgradeBtn.disabled = false;
+            }
+        }
+
+        function gainCoin() {
+            coinCount += coinsPerClick;
+            updateCounts();
+        }
+
+        // Event listener para o botão de moedas (agora com event.stopPropagation)
+        coinButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Impede que o clique no botão ative o evento de clique na tela
+            gainCoin();
+        });
+
+        // Event listener para a tecla "Espaço"
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' && gameSection.style.display === 'block') {
+                gainCoin();
+            }
+        });
+        
+        // Event listener para o toque na tela (mobile)
+        document.addEventListener('click', (event) => {
+            const isClickOutsideLogin = !event.target.closest('.login-container');
+            if (isClickOutsideLogin && gameSection.style.display === 'block') {
+                gainCoin();
+            }
+        });
+
+        // Ao clicar no botão "Jogo", mostra o pop-up de senha
+        btnGame.addEventListener('click', (e) => {
+            e.preventDefault();
+            passwordModal.style.display = 'block';
+        });
+
+        // Ao clicar no botão "Entrar" do pop-up de senha
+        passwordSubmit.addEventListener('click', () => {
+            if (passwordInput.value === '369') {
+                alert('Senha correta! Bem-vindo ao jogo.');
+                passwordModal.style.display = 'none';
+                gameSection.style.display = 'block';
+                updateCounts();
+            } else {
+                alert('Senha incorreta. Tente novamente.');
+            }
+            passwordInput.value = '';
+        });
+
+
+        // Ao clicar no botão "Robux"
+        btnRobuxFake.addEventListener('click', (e) => {
+            e.preventDefault();
+            const costToBuyRobux = 100;
+            if (coinCount >= costToBuyRobux) {
+                coinCount -= costToBuyRobux;
+                robuxCount++;
+                updateCounts();
+                alert(`Parabéns! Você usou ${formatLargeNumber(costToBuyRobux)} moedas e "comprou" 1 Robux!`);
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(costToBuyRobux)} moedas para comprar Robux. Você tem apenas ${formatLargeNumber(coinCount)}.`);
+            }
+        });
+        
+        // Ativação da Moeda por segundo
+        setInterval(() => {
+            if (passiveCoinGain > 0) {
+                coinCount += passiveCoinGain;
+                updateCounts();
+            }
+        }, 1000);
+
+        // Ativação do Robux por segundo
+        setInterval(() => {
+            if (passiveRobuxGain > 0) {
+                robuxCount += passiveRobuxGain;
+                updateCounts();
+            }
+        }, 1000);
+
+        // Comprar upgrade de clique
+        buyClickUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= clickUpgradeCost) {
+                robuxCount -= clickUpgradeCost;
+                coinsPerClick++;
+                clickUpgradeCost *= 2; // Custo duplica a cada compra
+                alert(`Upgrade de clique comprado! Agora você ganha ${formatLargeNumber(coinsPerClick)} moedas por clique.`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(clickUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
+            }
+        });
+        
+        // Comprar upgrade de moedas por segundo
+        buyPassiveUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= passiveUpgradeCost) {
+                robuxCount -= passiveUpgradeCost;
+                passiveCoinGain++;
+                passiveUpgradeCost *= 2; // Custo duplica a cada compra
+                alert(`Upgrade passivo comprado! Agora você ganha ${formatLargeNumber(passiveCoinGain)} moedas por segundo.`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(passiveUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
+            }
+        });
+        
+        // Comprar super upgrade de moedas por segundo
+        buySuperPassiveUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= superPassiveUpgradeCost) {
+                robuxCount -= superPassiveUpgradeCost;
+                passiveCoinGain += 1000;
+                superPassiveUpgradeCost *= 2; // Custo duplica a cada compra
+                alert(`SUPER UPGRADE COMPRADO! Agora você ganha ${formatLargeNumber(passiveCoinGain)} moedas por segundo.`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superPassiveUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
+            }
+        });
+
+        // Comprar upgrade de 1000 moedas por clique
+        buyRobuxClickUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= robuxClickUpgradeCost) {
+                robuxCount -= robuxClickUpgradeCost;
+                coinsPerClick += 1000;
+                alert(`Upgrade de ${formatLargeNumber(1000)} moedas por clique comprado!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(robuxClickUpgradeCost)} Robux para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 100.000 moedas por segundo
+        buySuperPassive2UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superPassive2UpgradeCost) {
+                coinCount -= superPassive2UpgradeCost;
+                passiveCoinGain += 100000;
+                alert(`Upgrade de ${formatLargeNumber(100000)} moedas por segundo comprado!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superPassive2UpgradeCost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 100.000 moedas por clique
+        buySuperClick2UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superClick2UpgradeCost) {
+                coinCount -= superClick2UpgradeCost;
+                coinsPerClick += 100000;
+                alert(`Upgrade de ${formatLargeNumber(100000)} moedas por clique comprado!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superClick2UpgradeCost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 50.000.000 moedas por segundo
+        buySuperPassive3UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superPassive3UpgradeCost) {
+                coinCount -= superPassive3UpgradeCost;
+                passiveCoinGain += 50000000;
+                alert(`Upgrade de ${formatLargeNumber(50000000)} moedas por segundo comprado!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superPassive3UpgradeCost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 50.000.000 moedas por clique
+        buySuperClick3UpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= superClick3UpgradeCost) {
+                coinCount -= superClick3UpgradeCost;
+                coinsPerClick += 50000000;
+                alert(`Upgrade de ${formatLargeNumber(50000000)} moedas por clique comprado!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superClick3UpgradeCost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de Robux por segundo
+        buyPassiveRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= passiveRobuxUpgradeCost) {
+                coinCount -= passiveRobuxUpgradeCost;
+                passiveRobuxGain += 1;
+                alert(`Você comprou 1 Robux por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(passiveRobuxUpgradeCost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 1 quadrilhão de Robux por segundo
+        buySuperRobuxUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= superRobuxUpgradeCost) {
+                robuxCount -= superRobuxUpgradeCost;
+                passiveRobuxGain += 1e15; // 1 quadrilhão
+                alert(`Você comprou 1 quadrilhão de Robux por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superRobuxUpgradeCost)} Robux para comprar este upgrade. Você tem apenas ${formatLargeNumber(robuxCount)}.`);
+            }
+        });
+
+        // Comprar upgrade de 1000 Robux por segundo
+        buySuperPassiveRobuxUpgrade2Btn.addEventListener('click', () => {
+            if (coinCount >= superPassiveRobuxUpgrade2Cost) {
+                coinCount -= superPassiveRobuxUpgrade2Cost;
+                passiveRobuxGain += 1000;
+                alert(`Você comprou 1.000 Robux por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superPassiveRobuxUpgrade2Cost)} moedas para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 1 sextilhão de moedas por segundo
+        buySuperCoinUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= superCoinUpgradeCost) {
+                robuxCount -= superCoinUpgradeCost;
+                passiveCoinGain += superCoinGain; // 1 sextilhão
+                alert(`Você comprou 1 sextilhão de moedas por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superCoinUpgradeCost)} Robux para comprar este upgrade.`);
+            }
+        });
+
+        // Comprar upgrade de 1 trilhão de Robux por segundo
+        buySuperPassiveRobuxUpgrade3Btn.addEventListener('click', () => {
+            if (coinCount >= superPassiveRobuxUpgrade3Cost) {
+                coinCount -= superPassiveRobuxUpgrade3Cost;
+                passiveRobuxGain += superRobuxGain; // 1 trilhão
+                alert(`Você comprou 1 trilhão de Robux por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(superPassiveRobuxUpgrade3Cost)} moedas para comprar este upgrade.`);
+            }
+        });
+        
+        // Comprar upgrade de 100 octilhões de moedas por segundo
+        buySeptillionCoinUpgradeBtn.addEventListener('click', () => {
+            if (robuxCount >= septillionCoinUpgradeCost) {
+                robuxCount -= septillionCoinUpgradeCost;
+                passiveCoinGain += septillionCoinGain;
+                alert(`Você comprou 100 octilhões de moedas por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(septillionCoinUpgradeCost)} Robux para comprar este upgrade.`);
+            }
+        });
+        
+        // Comprar upgrade de 100 quadrilhões de Robux por segundo
+        buyQuadrillionRobuxUpgradeBtn.addEventListener('click', () => {
+            if (coinCount >= quadrillionRobuxUpgradeCost) {
+                coinCount -= quadrillionRobuxUpgradeCost;
+                passiveRobuxGain += quadrillionRobuxGain;
+                alert(`Você comprou 100 quadrilhões de Robux por segundo!`);
+                updateCounts();
+            } else {
+                alert(`Você precisa de ${formatLargeNumber(quadrillionRobuxUpgradeCost)} Moedas para comprar este upgrade.`);
+            }
+        });
+    </script>
 </body>
 </html>
